@@ -21,6 +21,16 @@
 .film-description {
   font-size: 14px;
 }
+.poster-image {
+  height: auto;
+}
 .film-info {
+  height: 100%;
   padding: 16px;
+}
+@media (max-width: 575.98px) {
+  .poster-image {
+    height: 122px;
+    width: auto;
+  }
 }

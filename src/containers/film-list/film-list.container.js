@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import FilmCard from './../../components/film-card/film-card.component';
+import SearchBox from './../search-box/search-box.container';
 
 class FilmList extends Component {
   render() {
@@ -14,6 +15,7 @@ class FilmList extends Component {
     );
     return (
       <div className="container">
+        <SearchBox />
         <div className="row">{cards}</div>
       </div>
     );
