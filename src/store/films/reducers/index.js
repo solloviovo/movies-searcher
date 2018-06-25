@@ -1,39 +1,46 @@
-import { FilmsActionTypes } from '../epics';
+import * as fromActions from '../actions';
 
-const initialFilmState = {
-  films: null,
+const initialMoviesState = {
+  movies: null,
   loading: false,
   loaded: false
 };
 
-const moviesReducer = (state = initialFilmState, action) => {
+const moviesReducer = (state = initialMoviesState, action) => {
   switch (action.type) {
-    case FilmsActionTypes.GET_FILMS: {
+    case fromActions.MoviesActionTypes.LOAD_MOVIES: {
       return {
         ...state,
         loading: true,
         loaded: false
       };
     }
-    case FilmsActionTypes.ADD_FILMS: {
+    case fromActions.MoviesActionTypes.LOAD_MOVIES_SUCCESS: {
       const films = action.payload;
 
       const entities = films.reduce(
-        (entities, film) => {
+        (entities, movie) => {
           return {
             ...entities,
-            [film.id]: film
+            [movie.id]: movie
           };
         },
         {
-          ...state.films
+          ...state.movies
         }
       );
       return {
         ...state,
         loading: false,
         loaded: true,
-        films: entities
+        movies: entities
+      };
+    }
+    case fromActions.MoviesActionTypes.LOAD_MOVIES_FAIL: {
+      return {
+        ...state,
+        loading: false,
+        loaded: false
       };
     }
     default: {

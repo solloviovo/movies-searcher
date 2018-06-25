@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import FilmCard from './components/film-card/film-card.component';
 import { Provider } from 'react-redux';
-import * as fromFilms from './store/films/epics';
+import * as fromMoviesActions from './store/films/actions';
 import store from './store';
 import { rootEpic, epicMiddleware } from './store';
+import FilmList from './containers/film-list/film-list.container';
 
 epicMiddleware.run(rootEpic);
 
 ReactDOM.render(
   <Provider store={store}>
-    <FilmCard />
+    <FilmList />
   </Provider>,
   document.getElementById('root')
 );
 
-store.dispatch(fromFilms.getFilms());
+store.dispatch(fromMoviesActions.loadMovies());

@@ -1,17 +1,18 @@
-export const FilmsActionTypes = {
-  ADD_FILMS: 'ADD_FILMS',
-  SELECT_FILM: 'SELECT_FILM',
-  UPDATE_FILM: 'UPDATE_FILM'
+export const MoviesActionTypes = {
+  LOAD_MOVIES: '[MOVIES] Load Films',
+  LOAD_MOVIES_SUCCESS: '[MOVIES] Load Films Success',
+  LOAD_MOVIES_FAIL: '[MOVIES] Load Films Fail',
+  SELECT_MOVIE: '[MOVIES] Select Movie',
+  UPDATE_MOVIE: '[MOVIES] Update Movie'
 };
 
-export function addFilms(payload) {
-  return { type: FilmsActionTypes.ADD_FILMS, payload };
-}
+export const loadMovies = () => ({ type: MoviesActionTypes.LOAD_MOVIES });
 
-export function selectFilm(filmId) {
-  return { type: FilmsActionTypes.selectFilm, filmId };
-}
+export const loadMoviesSuccess = payload => ({
+  type: MoviesActionTypes.LOAD_MOVIES_SUCCESS,
+  payload
+});
 
-export function updateFilm(filmId) {
-  return { type: FilmsActionTypes.UPDATE_FILM, filmId };
-}
+export const loadMoviesFail = () => ({
+  type: MoviesActionTypes.LOAD_MOVIES_FAIL
+});

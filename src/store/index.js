@@ -1,13 +1,13 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import moviesReducer from './films/reducers';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { getFilmsEpic } from './films/epics';
+import { getMoviesEpic } from './films/epics';
 
 const rootReducer = combineReducers({
   movies: moviesReducer
 });
 
-export const rootEpic = combineEpics(getFilmsEpic);
+export const rootEpic = combineEpics(getMoviesEpic);
 
 export const epicMiddleware = createEpicMiddleware();
 

@@ -1,13 +1,26 @@
-.FilmCard {
-  background-color: black;
+.film {
+  padding: 8px;
+}
+.film-card {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 24px;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+    0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 0.25rem;
 }
 
-.title {
+.film-title {
+  font-size: 18px;
+}
+.film-subtitle {
   font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
 }
-.subtitle {
-  font-size: 24px;
+.film-description {
+  font-size: 14px;
 }
-.description {
-  font-size: 16px;
+.film-info {
+  padding: 16px;
 }
